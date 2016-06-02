@@ -1,0 +1,13 @@
+name: feedbase
+version: 0.3.0
+layout:
+  sol_sources: contracts
+  build_dir: build
+dependencies:
+  dappsys: 0.3.0
+environments:
+  morden:
+    objects:
+      feedbase:
+        class: Feedbase
+        address: '0xe620388430113d498777b456d53f1d9689ee80f5'
