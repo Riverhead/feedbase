@@ -1,3 +1,32 @@
+.RidleyGrotesk-Thin {
+	font-family: RidleyGrotesk-Thin;
+	font-weight: normal;
+	font-style: normal;
+}
+.RidleyGrotesk-UltraLight {
+	font-family: RidleyGrotesk-UltraLight;
+	font-weight: normal;
+	font-style: normal;
+}
+.RidleyGrotesk-Bold {
+	font-family: RidleyGrotesk-Bold;
+	font-weight: normal;
+	font-style: normal;
+}
+.RidleyGrotesk-ExtraBold {
+	font-family: RidleyGrotesk-ExtraBold;
+	font-weight: normal;
+	font-style: normal;
+}
+.RidleyGrotesk-Medium {
+	font-family: RidleyGrotesk-Medium;
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+
 * {
   box-sizing: border-box; }
 
@@ -10,10 +39,12 @@ body {
   color: #606c71; }
 
 a {
-  color: #1e6bb8;
+  color: #C4BFF6;
   text-decoration: none; }
   a:hover {
-    text-decoration: underline; }
+    text-decoration: underline;
+    color: #FFC857;
+  }
 
 .btn {
   display: inline-block;
@@ -56,8 +87,8 @@ a {
 .page-header {
   color: #fff;
   text-align: center;
-  background-color: #159957;
-  background-image: linear-gradient(120deg, #155799, #159957); }
+  background-color: #403888;
+  background-image: linear-gradient(120deg, #C4BFF6, #403888); }
 
 @media screen and (min-width: 64em) {
   .page-header {
@@ -112,7 +143,7 @@ a {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: normal;
-  color: #159957; }
+  color: #403888; }
 .main-content p {
   margin-bottom: 1em; }
 .main-content code {
