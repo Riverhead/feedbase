@@ -1,151 +1,138 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Feedbase by nexusdev</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Feedbase</h1>
-      <h2 class="project-tagline">A simple Ethereum contract that enables anyone to create a &quot;feed&quot; which can be used to publish an arbitrary sequence of values.</h2>
-      <a href="https://github.com/nexusdev/feedbase" class="btn">View on GitHub</a>
-      <a href="https://github.com/nexusdev/feedbase/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/nexusdev/feedbase/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
 
-    <section class="main-content">
-      <h1>
-<a id="feedbase" class="anchor" href="#feedbase" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Feedbase</h1>
+<head>
+  <meta charset="UTF-8">
+  <title>Feedbase by nexusdev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="stylesheets/animate.css" media="screen">
+</head>
 
-<p>This simple Ethereum contract enables anyone to create a "feed" which
-can be used to publish an arbitrary sequence of values.  Feeds can be
-transferred between owners and the owner of a feed is able to charge a
-fee to on-chain consumers of the information.  Expiration dates can be
-set to prevent consumers from reading stale data.</p>
+<body class="animated fadeIn">
+  <section class="page-header    animated bounce">
+    <img class="animated" src="img/logo-fb-c.svg" width="64" />
+    <center>
+      <h3 class="project-tagline" style="font-size: 18px; max-width:640px;">A simple Ethereum contract that enables anyone to create a &quot;feed&quot; which can be used to publish an arbitrary sequence of values.</h3>
+    </center>
+    <a href="https://github.com/nexusdev/feedbase" class="btn">View on GitHub</a>
+    <a href="https://github.com/nexusdev/feedbase/issues/new" class="btn">Issues</a>
+    <a href="https://github.com/nexusdev/feedbase/issues/new" class="btn">Wiki - coming soon</a>
+  </section>
 
-<h2>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+  <section class="main-content">
+    <h1>
+      <a id="feedbase" class="anchor" href="#feedbase" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+      </a>Feedbase</h1>
 
-<p>Feedbase can be installed using npm:</p>
+    <p>This simple Ethereum contract enables anyone to create a "feed" which can be used to publish an arbitrary sequence of values. Feeds can be transferred between owners and the owner of a feed is able to charge a fee to on-chain consumers of the information.
+      Expiration dates can be set to prevent consumers from reading stale data.</p>
 
-<pre><code>$ npm install -g feedbase
-</code></pre>
+    <h2>
+      <a id="installation" class="anchor" href="#installation" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+      </a>Installation</h2>
 
-<p>The following environment variables can be used for configuration:</p>
+    <p>Feedbase can be installed using npm:</p>
 
-<pre><code>ETH_ACCOUNT=0x1234567890123456789012345678901234567890
-ETH_RPC_HOST=localhost
-ETH_RPC_PORT=8545
-ETH_RPC_URL=http://localhost:8545
-</code></pre>
+    <pre>
+      <code>$ npm install -g feedbase
+      </code>
+    </pre>
 
-<h2>
-<a id="claiming-a-feed" class="anchor" href="#claiming-a-feed" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Claiming a feed</h2>
+    <p>The following environment variables can be used for configuration:</p>
 
-<p>Before you can start publishing values, you need to claim a feed ID:</p>
+    <pre>
+      <code>ETH_ACCOUNT=0x1234567890123456789012345678901234567890 ETH_RPC_HOST=localhost ETH_RPC_PORT=8545 ETH_RPC_URL=http://localhost:8545
+      </code>
+    </pre>
 
-<pre><code>$ feedbase claim
-{
-  "id": 15,
-  "owner": "0xeb5150cc175e6892c1bd7bf559aab19e3d347e69",
-  "description": "",
-  "token": "0x0000000000000000000000000000000000000000",
-  "fee": "0x0",
-  "value": "0x0000000000000000000000000000000000000000000000000000000000000000",
-  "timestamp": 0,
-  "expiration": 0,
-  "expired": true
-}
-</code></pre>
+    <h2>
+      <a id="claiming-a-feed" class="anchor" href="#claiming-a-feed" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+      </a>Claiming a feed</h2>
 
-<p>If you want to be able to charge a fee, when claiming your feed ID,
-you need to specify the address of the token you wish to use:</p>
+    <p>Before you can start publishing values, you need to claim a feed ID:</p>
 
-<pre><code>$ feedbase claim 0x4244e29ec71fc32a34dba8e89d4856e507d1bc87
-{
-  "id": 16,
-  "owner": "0xeb5150cc175e6892c1bd7bf559aab19e3d347e69",
-  "description": "",
-  "token": "0x4244e29ec71fc32a34dba8e89d4856e507d1bc87",
-  "fee": "0x0",
-  "value": "0x0000000000000000000000000000000000000000000000000000000000000000",
-  "timestamp": 0,
-  "expiration": 0,
-  "expired": true
-}
-</code></pre>
+    <pre>
+      <code>$ feedbase claim { "id": 15, "owner": "0xeb5150cc175e6892c1bd7bf559aab19e3d347e69", "description": "", "token": "0x0000000000000000000000000000000000000000", "fee": "0x0", "value": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "timestamp": 0, "expiration": 0, "expired": true }
+      </code>
+    </pre>
 
-<p>The token address of a feed can never be changed, but the fee itself
-can be reset at any time (including to zero):</p>
+    <p>If you want to be able to charge a fee, when claiming your feed ID, you need to specify the address of the token you wish to use:</p>
 
-<pre><code>$ feedbase set-fee 16 0x10000000
-</code></pre>
+    <pre>
+      <code>$ feedbase claim 0x4244e29ec71fc32a34dba8e89d4856e507d1bc87 { "id": 16, "owner": "0xeb5150cc175e6892c1bd7bf559aab19e3d347e69", "description": "", "token": "0x4244e29ec71fc32a34dba8e89d4856e507d1bc87", "fee": "0x0", "value": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "timestamp": 0, "expiration": 0, "expired": true }
+      </code>
+    </pre>
 
-<p>Fees are always charged to the first contract to read each value,
-but the fee is not charged to subsequent reads of the same value.
-When a new value is published, the fee is charged again.</p>
+    <p>The token address of a feed can never be changed, but the fee itself can be reset at any time (including to zero):</p>
 
-<p>If you want, you can add a description (32 bytes maximum):</p>
+    <pre>
+      <code>$ feedbase set-fee 16 0x10000000
+      </code>
+    </pre>
 
-<pre><code>$ feedbase set-description 16 "Temperature in Central Park"
-</code></pre>
+    <p>Fees are always charged to the first contract to read each value, but the fee is not charged to subsequent reads of the same value. When a new value is published, the fee is charged again.</p>
 
-<p>Inspect the feed to make sure your changes went through:</p>
+    <p>If you want, you can add a description (32 bytes maximum):</p>
 
-<pre><code>$ feedbase inspect 16
-{
-  "id": 16,
-  "owner": "0xeb5150cc175e6892c1bd7bf559aab19e3d347e69",
-  "description": "Temperature in Central Park",
-  "token": "0x4244e29ec71fc32a34dba8e89d4856e507d1bc87",
-  "fee": "0x10000000",
-  "value": "0x0000000000000000000000000000000000000000000000000000000000000000",
-  "timestamp": 0,
-  "expiration": 0,
-  "expired": true
-}
-</code></pre>
+    <pre>
+      <code>$ feedbase set-description 16 "Temperature in Central Park"
+      </code>
+    </pre>
 
-<h2>
-<a id="publishing-feed-values" class="anchor" href="#publishing-feed-values" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Publishing feed values</h2>
+    <p>Inspect the feed to make sure your changes went through:</p>
 
-<p>Feed values are 32 bytes of arbitrary data plus expiration dates:</p>
+    <pre>
+      <code>$ feedbase inspect 16 { "id": 16, "owner": "0xeb5150cc175e6892c1bd7bf559aab19e3d347e69", "description": "Temperature in Central Park", "token": "0x4244e29ec71fc32a34dba8e89d4856e507d1bc87", "fee": "0x10000000", "value": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "timestamp": 0, "expiration": 0, "expired": true }
+      </code>
+    </pre>
 
-<pre><code>$ feedbase publish 16 \
-0x0000000000000000000000000000000490000000000000000000000000000000 \
-$((`date +%s` + 300))
-</code></pre>
+    <h2>
+      <a id="publishing-feed-values" class="anchor" href="#publishing-feed-values" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+      </a>Publishing feed values</h2>
 
-<p>In this example we're setting the value of the feed to the number 73
-represented in 128x128 fixed-point notation.  The expiration date is
-set to 5 minutes from now.</p>
+    <p>Feed values are 32 bytes of arbitrary data plus expiration dates:</p>
 
-<p>See also Keeper <a href="https://github.com/nexusdev/keeper">https://github.com/nexusdev/keeper</a>.</p>
+    <pre>
+      <code>$ feedbase publish 16 \ 0x0000000000000000000000000000000490000000000000000000000000000000 \ $((`date +%s` + 300))
+      </code>
+    </pre>
 
-<h2>
-<a id="more-information" class="anchor" href="#more-information" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>More information</h2>
+    <p>In this example we're setting the value of the feed to the number 73 represented in 128x128 fixed-point notation. The expiration date is set to 5 minutes from now.</p>
 
-<p>For more details, please consult the following files:</p>
+    <p>See also Keeper <a href="https://github.com/nexusdev/keeper">https://github.com/nexusdev/keeper</a>.</p>
 
-<pre><code>bin/feedbase
-lib/feedbase.js
-contracts/feedbase.sol
-contracts/feedbase_test.sol
-</code></pre>
+    <h2>
+      <a id="more-information" class="anchor" href="#more-information" aria-hidden="true">
+        <span aria-hidden="true" class="octicon octicon-link"></span>
+      </a>More information</h2>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/nexusdev/feedbase">Feedbase</a> is maintained by <a href="https://github.com/nexusdev">nexusdev</a>.</span>
+    <p>For more details, please consult the following files:</p>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> </span>
-      </footer>
+    <pre>
+      <code>bin/feedbase lib/feedbase.js contracts/feedbase.sol contracts/feedbase_test.sol
+      </code>
+    </pre>
 
-    </section>
+    <footer class="site-footer">
+      <span class="site-footer-owner"><a href="https://github.com/nexusdev/feedbase">Feedbase</a> is maintained by <a href="https://github.com/nexusdev">nexusdev</a>.</span>
+
+      <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> </span>
+    </footer>
+
+  </section>
 
 
-  </body>
+</body>
+
 </html>
