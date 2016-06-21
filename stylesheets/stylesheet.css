@@ -275,3 +275,103 @@ a {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
+
+
+.logo-bg {
+	z-index:1;
+}
+
+
+.logo-tr-t {
+		z-index:9999;
+		position: absolute;
+		top:4.6rem;
+}
+
+.logo-tr-b {
+		z-index:999;
+		position: absolute;
+		margin-left: 0.8rem;
+		margin-top:2rem;
+}
+
+
+.floating{
+    -webkit-animation-name: Floatingx;
+    -webkit-animation-duration: 6s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-name: Floating;
+    -moz-animation-duration: 6s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: ease-in-out;
+
+
+}
+
+@-webkit-keyframes Floatingx{
+    from {-webkit-transform:translate(0, 0px);}
+    65% {-webkit-transform:translate(0, 15px);}
+    to {-webkit-transform: translate(0, -0px);    }
+}
+
+@-moz-keyframes Floating{
+    from {-moz-transform:translate(0, 0px);}
+    65% {-moz-transform:translate(0, 15px);}
+    to {-moz-transform: translate(0, -0px);}
+}
+
+
+.scaling{
+    float: left;
+    -webkit-animation-name: scalex;
+    -webkit-animation-duration:3s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:ease-in-out;
+    -moz-animation-name: scale;
+    -moz-animation-duration:3s;
+    -moz-animation-iteration-count:infinite;
+    -moz-animation-timing-function:ease-in-out;
+    margin-left: 10px;
+    margin-top: 14px;
+}
+
+.scaling2{
+    float: left;
+    -webkit-animation-name: scalex2;
+    -webkit-animation-duration:1s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:ease-in-out;
+    -moz-animation-name: scale2;
+    -moz-animation-duration:3s;
+    -moz-animation-iteration-count:infinite;
+    -moz-animation-timing-function:ease-in-out;
+    margin-left: 0.8rem;
+    margin-top: 2rem;
+}
+
+
+
+    @-webkit-keyframes scalex{
+        from {-webkit-transform: scale(0.9);}
+        1% {-webkit-transform: scale(1.0);}
+        to {-webkit-transform: scale(0.9);}
+    }
+
+    @-moz-keyframes scale{
+        from {-moz-transform: scale(0.9);}
+        65% {-moz-transform: scale(1.0);}
+        to {-moz-transform: scale(0.9);}
+    }
+
+		    @-webkit-keyframes scalex2{
+		        from {-webkit-transform: scale(0.9);}
+		        14% {-webkit-transform: scale(1.0);}
+		        to {-webkit-transform: scale(0.9);}
+		    }
+
+		    @-moz-keyframes scale2{
+		        from {-moz-transform: scale(0.9);}
+		        22% {-moz-transform: scale(1.0);}
+		        to {-moz-transform: scale(0.9);}
+		    }
