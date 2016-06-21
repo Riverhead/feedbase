@@ -332,8 +332,8 @@ a {
     -moz-animation-duration:3s;
     -moz-animation-iteration-count:infinite;
     -moz-animation-timing-function:ease-in-out;
-    margin-left: 10px;
-    margin-top: 14px;
+    margin-left: 0.6rem;
+    margin-top: 1rem;
 }
 
 .scaling2{
@@ -346,8 +346,8 @@ a {
     -moz-animation-duration:3s;
     -moz-animation-iteration-count:infinite;
     -moz-animation-timing-function:ease-in-out;
-    margin-left: 0.8rem;
-    margin-top: 2rem;
+    margin-left: 0.rem;
+    margin-top: 2.2rem;
 }
 
 
